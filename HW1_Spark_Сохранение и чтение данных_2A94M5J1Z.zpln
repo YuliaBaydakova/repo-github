@@ -1,0 +1,743 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%pyspark\nfrom pyspark.sql import SparkSession",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T05:50:55+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1662874754928_369667265",
+      "id": "20220911-053914_1870013616",
+      "dateCreated": "2022-09-11T05:39:14+0000",
+      "dateStarted": "2022-09-11T05:50:55+0000",
+      "dateFinished": "2022-09-11T05:50:55+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "focus": true,
+      "$$hashKey": "object:11244"
+    },
+    {
+      "text": "%pyspark\nspark = SparkSession \\\n    .builder \\\n    .appName(\"MyApp\") \\\n    .getOrCreate()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T05:55:28+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1662875518729_1987278342",
+      "id": "20220911-055158_1153447238",
+      "dateCreated": "2022-09-11T05:51:58+0000",
+      "dateStarted": "2022-09-11T05:55:28+0000",
+      "dateFinished": "2022-09-11T05:55:29+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11245"
+    },
+    {
+      "text": "%pyspark\nurl = 'https://s3.amazonaws.com/apache-zeppelin/tutorial/bank/bank.csv'\nfrom pyspark import SparkFiles\nspark.sparkContext.addFile(url)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:07:01+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1662876291144_2120615482",
+      "id": "20220911-060451_1387160217",
+      "dateCreated": "2022-09-11T06:04:51+0000",
+      "dateStarted": "2022-09-11T06:07:01+0000",
+      "dateFinished": "2022-09-11T06:07:04+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11246"
+    },
+    {
+      "text": "%pyspark\ndf = spark.read.csv(\"file://\"+SparkFiles.get(\"bank.csv\"), sep=';', header=True,inferSchema = True)",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:13:02+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.17.0.2:4040/jobs/job?id=2",
+            "http://172.17.0.2:4040/jobs/job?id=3"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1662876160896_-676172032",
+      "id": "20220911-060240_1213486813",
+      "dateCreated": "2022-09-11T06:02:40+0000",
+      "dateStarted": "2022-09-11T06:13:02+0000",
+      "dateFinished": "2022-09-11T06:13:03+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11247"
+    },
+    {
+      "text": "%pyspark\ndf.show()",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:31:56+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+-------------+-------+---------+-------+-------+-------+----+--------+---+-----+--------+--------+-----+--------+--------+---+\n|age|          job|marital|education|default|balance|housing|loan| contact|day|month|duration|campaign|pdays|previous|poutcome|  y|\n+---+-------------+-------+---------+-------+-------+-------+----+--------+---+-----+--------+--------+-----+--------+--------+---+\n| 30|   unemployed|married|  primary|     no|   1787|     no|  no|cellular| 19|  oct|      79|       1|   -1|       0| unknown| no|\n| 33|     services|married|secondary|     no|   4789|    yes| yes|cellular| 11|  may|     220|       1|  339|       4| failure| no|\n| 35|   management| single| tertiary|     no|   1350|    yes|  no|cellular| 16|  apr|     185|       1|  330|       1| failure| no|\n| 30|   management|married| tertiary|     no|   1476|    yes| yes| unknown|  3|  jun|     199|       4|   -1|       0| unknown| no|\n| 59|  blue-collar|married|secondary|     no|      0|    yes|  no| unknown|  5|  may|     226|       1|   -1|       0| unknown| no|\n| 35|   management| single| tertiary|     no|    747|     no|  no|cellular| 23|  feb|     141|       2|  176|       3| failure| no|\n| 36|self-employed|married| tertiary|     no|    307|    yes|  no|cellular| 14|  may|     341|       1|  330|       2|   other| no|\n| 39|   technician|married|secondary|     no|    147|    yes|  no|cellular|  6|  may|     151|       2|   -1|       0| unknown| no|\n| 41| entrepreneur|married| tertiary|     no|    221|    yes|  no| unknown| 14|  may|      57|       2|   -1|       0| unknown| no|\n| 43|     services|married|  primary|     no|    -88|    yes| yes|cellular| 17|  apr|     313|       1|  147|       2| failure| no|\n| 39|     services|married|secondary|     no|   9374|    yes|  no| unknown| 20|  may|     273|       1|   -1|       0| unknown| no|\n| 43|       admin.|married|secondary|     no|    264|    yes|  no|cellular| 17|  apr|     113|       2|   -1|       0| unknown| no|\n| 36|   technician|married| tertiary|     no|   1109|     no|  no|cellular| 13|  aug|     328|       2|   -1|       0| unknown| no|\n| 20|      student| single|secondary|     no|    502|     no|  no|cellular| 30|  apr|     261|       1|   -1|       0| unknown|yes|\n| 31|  blue-collar|married|secondary|     no|    360|    yes| yes|cellular| 29|  jan|      89|       1|  241|       1| failure| no|\n| 40|   management|married| tertiary|     no|    194|     no| yes|cellular| 29|  aug|     189|       2|   -1|       0| unknown| no|\n| 56|   technician|married|secondary|     no|   4073|     no|  no|cellular| 27|  aug|     239|       5|   -1|       0| unknown| no|\n| 37|       admin.| single| tertiary|     no|   2317|    yes|  no|cellular| 20|  apr|     114|       1|  152|       2| failure| no|\n| 25|  blue-collar| single|  primary|     no|   -221|    yes|  no| unknown| 23|  may|     250|       1|   -1|       0| unknown| no|\n| 31|     services|married|secondary|     no|    132|     no|  no|cellular|  7|  jul|     148|       1|  152|       1|   other| no|\n+---+-------------+-------+---------+-------+-------+-------+----+--------+---+-----+--------+--------+-----+--------+--------+---+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.17.0.2:4040/jobs/job?id=9"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1662876721606_-652485086",
+      "id": "20220911-061201_1034316061",
+      "dateCreated": "2022-09-11T06:12:01+0000",
+      "dateStarted": "2022-09-11T06:31:56+0000",
+      "dateFinished": "2022-09-11T06:31:56+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11248"
+    },
+    {
+      "text": "%pyspark\ndf.registerTempTable(\"bank\")",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:32:00+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1662877345190_-1701152013",
+      "id": "20220911-062225_322440055",
+      "dateCreated": "2022-09-11T06:22:25+0000",
+      "dateStarted": "2022-09-11T06:32:00+0000",
+      "dateFinished": "2022-09-11T06:32:00+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11249"
+    },
+    {
+      "text": "%sql \nselect age, count(1) value\nfrom bank \nwhere age < 30 \ngroup by age \norder by age",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:18:53+0000",
+      "config": {
+        "colWidth": 4,
+        "results": [
+          {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 366,
+              "optionOpen": false,
+              "setting": {
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "age",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "value",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        ],
+        "enabled": true,
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text",
+        "fontSize": 9
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "age\tvalue\n19\t4\n20\t3\n21\t7\n22\t9\n23\t20\n24\t24\n25\t44\n26\t77\n27\t94\n28\t103\n29\t97\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.17.0.2:4040/jobs/job?id=5"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1423500782552_-1439281894",
+      "id": "20150210-015302_1492795503",
+      "dateCreated": "2015-02-10T01:53:02+0000",
+      "dateStarted": "2022-09-11T06:18:53+0000",
+      "dateFinished": "2022-09-11T06:18:55+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11250"
+    },
+    {
+      "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere age < ${maxAge=30} \ngroup by age \norder by age",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:25:49+0000",
+      "config": {
+        "colWidth": 4,
+        "results": [
+          {
+            "graph": {
+              "mode": "scatterChart",
+              "height": 294,
+              "optionOpen": false,
+              "setting": {
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "age",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "value",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        ],
+        "enabled": true,
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text",
+        "fontSize": 9
+      },
+      "settings": {
+        "params": {
+          "maxAge": "35"
+        },
+        "forms": {
+          "maxAge": {
+            "type": "TextBox",
+            "name": "maxAge",
+            "defaultValue": "30",
+            "hidden": false,
+            "$$hashKey": "object:11479"
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "age\tvalue\n19\t4\n20\t3\n21\t7\n22\t9\n23\t20\n24\t24\n25\t44\n26\t77\n27\t94\n28\t103\n29\t97\n30\t150\n31\t199\n32\t224\n33\t186\n34\t231\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.17.0.2:4040/jobs/job?id=7"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1423720444030_-1424110477",
+      "id": "20150212-145404_867439529",
+      "dateCreated": "2015-02-12T14:54:04+0000",
+      "dateStarted": "2022-09-11T06:25:40+0000",
+      "dateFinished": "2022-09-11T06:25:42+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11251"
+    },
+    {
+      "text": "%sql \nselect age, count(1) value \nfrom bank \nwhere marital=\"${marital=single,single|divorced|married}\" \ngroup by age \norder by age",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:25:55+0000",
+      "config": {
+        "colWidth": 4,
+        "results": [
+          {
+            "graph": {
+              "mode": "stackedAreaChart",
+              "height": 280,
+              "optionOpen": false,
+              "setting": {
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "age",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "value",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        ],
+        "enabled": true,
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text",
+        "fontSize": 9,
+        "runOnSelectionChange": true
+      },
+      "settings": {
+        "params": {
+          "marital": "single"
+        },
+        "forms": {
+          "marital": {
+            "type": "Select",
+            "options": [
+              {
+                "value": "single",
+                "$$hashKey": "object:11519"
+              },
+              {
+                "value": "divorced",
+                "$$hashKey": "object:11520"
+              },
+              {
+                "value": "married",
+                "$$hashKey": "object:11521"
+              }
+            ],
+            "name": "marital",
+            "defaultValue": "single",
+            "hidden": false,
+            "$$hashKey": "object:11505"
+          }
+        }
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "age\tvalue\n19\t4\n20\t3\n21\t7\n22\t9\n23\t17\n24\t13\n25\t33\n26\t56\n27\t64\n28\t78\n29\t56\n30\t92\n31\t86\n32\t105\n33\t61\n34\t75\n35\t46\n36\t50\n37\t43\n38\t44\n39\t30\n40\t25\n41\t19\n42\t23\n43\t21\n44\t20\n45\t15\n46\t14\n47\t12\n48\t12\n49\t11\n50\t8\n51\t6\n52\t9\n53\t4\n55\t3\n56\t3\n57\t2\n58\t7\n59\t2\n60\t5\n66\t2\n69\t1\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.17.0.2:4040/jobs/job?id=8"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1423836262027_-210588283",
+      "id": "20150213-230422_1600658137",
+      "dateCreated": "2015-02-13T23:04:22+0000",
+      "dateStarted": "2022-09-11T06:25:55+0000",
+      "dateFinished": "2022-09-11T06:25:57+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11252"
+    },
+    {
+      "text": "%md\n## Congratulations, it's done.\n##### You can create your own notebook in 'Notebook' menu. Good luck!",
+      "user": "anonymous",
+      "dateUpdated": "2016-12-17T15:30:24+0000",
+      "config": {
+        "colWidth": 12,
+        "editorHide": true,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false
+            }
+          }
+        ],
+        "enabled": true,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true
+        },
+        "editorMode": "ace/mode/markdown",
+        "tableHide": false,
+        "fontSize": 9
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h2>Congratulations, it&rsquo;s done.</h2>\n<h5>You can create your own notebook in &lsquo;Notebook&rsquo; menu. Good luck!</h5>\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1423836268492_216498320",
+      "id": "20150213-230428_1231780373",
+      "dateCreated": "2015-02-13T23:04:28+0000",
+      "dateStarted": "2016-12-17T15:30:24+0000",
+      "dateFinished": "2016-12-17T15:30:29+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11253"
+    },
+    {
+      "text": "%pyspark\ndf.dtypes\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:35:54+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[('age', 'int'),\n ('job', 'string'),\n ('marital', 'string'),\n ('education', 'string'),\n ('default', 'string'),\n ('balance', 'int'),\n ('housing', 'string'),\n ('loan', 'string'),\n ('contact', 'string'),\n ('day', 'int'),\n ('month', 'string'),\n ('duration', 'int'),\n ('campaign', 'int'),\n ('pdays', 'int'),\n ('previous', 'int'),\n ('poutcome', 'string'),\n ('y', 'string')]"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1662877928235_-2046847894",
+      "id": "20220911-063208_16636784",
+      "dateCreated": "2022-09-11T06:32:08+0000",
+      "dateStarted": "2022-09-11T06:35:55+0000",
+      "dateFinished": "2022-09-11T06:35:55+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11254"
+    },
+    {
+      "text": "%pyspark\nfrom pyspark.sql.types import StringType\ndf = df.withColumn(\"age\", df[\"age\"].cast('string'))",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:49:03+0000",
+      "config": {
+        "colWidth": 12,
+        "editorHide": false,
+        "results": [
+          {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false
+            }
+          }
+        ],
+        "enabled": true,
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text",
+        "tableHide": false,
+        "fontSize": 9
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1427420818407_872443482",
+      "id": "20150326-214658_12335843",
+      "dateCreated": "2015-03-26T21:46:58+0000",
+      "dateStarted": "2022-09-11T06:49:03+0000",
+      "dateFinished": "2022-09-11T06:49:03+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11255"
+    },
+    {
+      "text": "%pyspark\ndf.dtypes",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:49:13+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[('age', 'string'),\n ('job', 'string'),\n ('marital', 'string'),\n ('education', 'string'),\n ('default', 'string'),\n ('balance', 'int'),\n ('housing', 'string'),\n ('loan', 'string'),\n ('contact', 'string'),\n ('day', 'int'),\n ('month', 'string'),\n ('duration', 'int'),\n ('campaign', 'int'),\n ('pdays', 'int'),\n ('previous', 'int'),\n ('poutcome', 'string'),\n ('y', 'string')]"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1435955447812_-158639899",
+      "id": "20150703-133047_853701097",
+      "dateCreated": "2015-07-03T13:30:47+0000",
+      "dateStarted": "2022-09-11T06:49:13+0000",
+      "dateFinished": "2022-09-11T06:49:13+0000",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11256"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-11T06:49:13+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/text"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1662878953171_-1418190462",
+      "id": "20220911-064913_115826118",
+      "dateCreated": "2022-09-11T06:49:13+0000",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500,
+      "$$hashKey": "object:11257"
+    }
+  ],
+  "name": "HW1_Spark_Сохранение и чтение данных",
+  "id": "2A94M5J1Z",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "md:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "looknfeel": "default",
+    "isZeppelinNotebookCronEnable": false,
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
